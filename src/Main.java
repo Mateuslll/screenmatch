@@ -1,3 +1,4 @@
+import br.com.mb.screenmatch.calculos.CalculadoraDeTempo;
 import br.com.mb.screenmatch.modelo.Filme;
 import br.com.mb.screenmatch.modelo.Serie;
 
@@ -8,6 +9,12 @@ public class Main {
         meuFilme.setAnoDeLancamento(1970);
         meuFilme.setDuracaoMinutos(180);
         meuFilme.setIncluidoNoPlano(true);
+
+        Filme outroFilme = new Filme(); //tipagem por referencia
+        outroFilme.setNome("O poderoso Chefão 2");
+        outroFilme.setAnoDeLancamento(1970);
+        outroFilme.setDuracaoMinutos(200);
+        outroFilme.setIncluidoNoPlano(true);
 
         meuFilme.exibeFichaTecnica(); // invocação de método
         meuFilme.avaliaFilme(8);
@@ -29,6 +36,11 @@ public class Main {
         lost.setEpsodiosPorTemporada(10);
         lost.setMinutosPorEpsodio(50);
         System.out.println("Duração do para maratonar Lost  : " + lost.getDuracaoMinutos());
+        CalculadoraDeTempo calcula = new CalculadoraDeTempo();
+        calcula.inclui(meuFilme);
+        calcula.inclui(outroFilme);
+        calcula.inclui(lost);
+        System.out.println(calcula.getTempoTotal());
         //System.out.println(lost.getEpsodiosPorTemporada());
     }
 }
