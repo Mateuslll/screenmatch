@@ -1,4 +1,5 @@
 import br.com.mb.screenmatch.modelo.Filme;
+import br.com.mb.screenmatch.modelo.Serie;
 
 public class Main {
     public static void main(String[] args) {
@@ -20,8 +21,14 @@ public class Main {
         //meuFilme.somaAvaliacoes = 10;
         //meuFilme.totalDeAvaliacoes = 1;
         //System.out.println(meuFilme.retornaMedia());
-
-
-
+        Serie lost = new Serie();
+        lost.setNome("Lost");
+        lost.setAnoDeLancamento(2000);
+        lost.exibeFichaTecnica();
+        lost.setTemporadas(10);
+        lost.setEpsodiosPorTemporada(10);
+        lost.setMinutosPorEpsodio(50);
+        System.out.println("Duração do para maratonar Lost  : " + lost.getDuracaoMinutos());
+        //System.out.println(lost.getEpsodiosPorTemporada());
     }
 }
